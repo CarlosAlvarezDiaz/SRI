@@ -36,12 +36,13 @@ Esto crea un contenedor llamado 'asir_httpd' que utiliza la imagen 'httpd' y map
       ce54662785d98b9c4a4c657e59961c16b872d3cbb6690e7d6334f20be2e9ef58
 
       Este contenedor utilizará el volumen que creamos para el directorio 'htdocs'.
-      
-8 Utiliza Code para hacer un hola mundo en html
 
+8 Crea otro contenedor 'asir_web2' con el mismo volumen y a otro puerto, por ejemplo 9080.
 
-9 Crea otro contenedor 'asir_web2' con el mismo volumen y a otro puerto, por ejemplo 9080.
-10 Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador:
+      $ docker run -d -p 9080:80 --name asir_web2 -v asir_web_volume:/usr/local/apache2/htdocs/ httpd
+      eb99b30f8cd35770eb4d8e355c79fd12bf07c2a53217c53a271153f9b4ff9bfe
+
+9 Comprueba que los dos servidores 'sirven' la misma página, es decir, cuando consultamos en el navegador:
         http://localhost:9080 
         http://localhost:8000
-11 Tienen que salir la misma página web
+10 Tienen que salir la misma página web
