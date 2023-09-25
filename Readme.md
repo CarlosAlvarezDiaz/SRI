@@ -14,10 +14,13 @@ Descarga la imagen 'httpd' y comprueba que está en tu equipo.
         Status: Image is up to date for httpd:latest
         docker.io/library/httpd:latest
 Crea un contenedor con el nombre 'asir_httpd'.
-  
 Mapea el puerto 80 del contenedor con el puerto 8000 de tu máquina.
 Utiliza bind mount para que el directorio del apache2 'htdocs' este montado un directorio que tu elijas.
 
+            ~$ docker run -d -p 8000:80 --name asir_httpd -v "$PWD/htdocs":/usr/local/apache2/htdocs/ httpd
+                  6e72f68ec0a5ddd91300912e70dbcc5269e0eacd481fcca9abecc501e9598e73
+                  
+Esto crea un contenedor llamado 'asir_httpd' que utiliza la imagen 'httpd' y mapea el puerto 80 del contenedor al puerto 8000 de tu máquina. Además, monta el directorio local 'htdocs' en el directorio '/usr/local/apache2/htdocs/' dentro del contenedor.
 Realiza un 'hola mundo' en html y comprueba que accedes desde el navegador.
 
 Crea un volumen para este mismo fin.
