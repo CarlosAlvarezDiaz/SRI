@@ -46,3 +46,7 @@ Esto crea un contenedor llamado 'asir_httpd' que utiliza la imagen 'httpd' y map
         http://localhost:9080 
         http://localhost:8000
 10 Tienen que salir la misma página web
+
+                Ambas URLs deberían mostrar la misma página web "Hola Mundo", ya que ambos contenedores están                          utilizando el mismo volumen que contiene los archivos HTML.
+
+                  Con estos pasos, has creado dos contenedores que sirven la misma página web a través de diferentes                     puertos, utilizando un volumen compartido.
